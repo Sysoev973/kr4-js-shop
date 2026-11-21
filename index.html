@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Исток — магазин тематических сборников источников</title>
+  <meta name="description" content="Исток: кураторские сборники книг, статей и исследований по инженерным темам. Первый раздел — Engineering → AI Engineering.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Исток — магазин тематических сборников источников">
+  <meta property="og:description" content="Исток: кураторские сборники книг, статей и исследований по инженерным темам.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">Исток</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="category.html">Engineering</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Сборник</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <section class="hero">
+      <div class="hero__content">
+        <p class="kicker">Магазин тематических сборников источников</p>
+        <h1 class="hero__title">Знания по теме — в одном сборнике</h1>
+        <p class="hero__text">Кураторские сборники книг, статей и исследований по инженерным направлениям. Первая витрина — раздел Engineering → AI Engineering на базе курса microsoft/AI-For-Beginners.</p>
+        <div class="hero__actions">
+          <a class="button button--accent" href="catalog.html">Перейти в каталог</a>
+          <a class="button button--light" href="category.html">Раздел Engineering</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="advantages">
+      <h2 class="section__title">Преимущества</h2>
+      <ul class="advantages">
+        <li class="advantages__item"><h3 class="advantages__title">Кураторский отбор</h3><p class="advantages__text">Каждый источник проверен и аннотирован редакторами раздела.</p></li>
+        <li class="advantages__item"><h3 class="advantages__title">Открытый состав</h3><p class="advantages__text">Список источников виден на карточке сборника до покупки.</p></li>
+        <li class="advantages__item"><h3 class="advantages__title">Удобные форматы</h3><p class="advantages__text">PDF, EPUB и веб-версия с активными ссылками.</p></li>
+        <li class="advantages__item"><h3 class="advantages__title">Обновления 12 месяцев</h3><p class="advantages__text">Новые редакции сборника приходят бесплатно.</p></li>
+      </ul>
+    </section>
+
+    <section class="section" id="popular">
+      <h2 class="section__title">Популярные сборники</h2>
+      <div class="products-grid">
+        <article class="product-card product-card--featured">
+          <span class="badge badge--hit product-card__badge">Хит</span>
+          <img class="product-card__image" src="images/ai-engineering.svg" alt="Обложка сборника «AI Engineering: базовый сборник»" width="400" height="260" loading="lazy">
+          <p class="product-card__category"><a class="product-card__category-link" href="category.html">Engineering → AI Engineering</a></p>
+          <h3 class="product-card__title">AI Engineering: базовый сборник</h3>
+          <p class="product-card__description">Введение в инженерию искусственного интеллекта: от нейросетей до этики ИИ.</p>
+          <ul class="product-card__sources">
+            <li>microsoft/AI-For-Beginners</li>
+            <li>Russell, Norvig «AI: A Modern Approach»</li>
+            <li>Goodfellow et al. «Deep Learning»</li>
+          </ul>
+          <p class="product-card__price">1 490 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <button class="button button--primary product-card__button" type="button" data-product="AI Engineering: базовый сборник">Заказать</button>
+          </div>
+        </article>
+        <article class="product-card">
+          <span class="badge badge--new product-card__badge">Новинка</span>
+          <img class="product-card__image" src="images/web-development.svg" alt="Обложка сборника «Web Development: полный сборник»" width="400" height="260" loading="lazy">
+          <p class="product-card__category">Engineering → Web Development</p>
+          <h3 class="product-card__title">Web Development: полный сборник</h3>
+          <p class="product-card__description">Фронтенд и бэкенд с нуля: HTML, CSS, JavaScript и практика на проектах.</p>
+          <ul class="product-card__sources">
+            <li>microsoft/Web-Dev-For-Beginners</li>
+            <li>MDN Web Docs</li>
+            <li>Haverbeke «Eloquent JavaScript»</li>
+          </ul>
+          <p class="product-card__price">1 390 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <button class="button button--primary product-card__button" type="button" data-product="Web Development: полный сборник">Заказать</button>
+          </div>
+        </article>
+        <article class="product-card product-card--discount">
+          <span class="badge badge--sale product-card__badge">Скидка</span>
+          <img class="product-card__image" src="images/system-design.svg" alt="Обложка сборника «Системный дизайн: сборник архитектора»" width="400" height="260" loading="lazy">
+          <p class="product-card__category">Engineering → System Design</p>
+          <h3 class="product-card__title">Системный дизайн: сборник архитектора</h3>
+          <p class="product-card__description">Проектирование масштабируемых систем: от кэширования до шардирования.</p>
+          <ul class="product-card__sources">
+            <li>donnemartin/system-design-primer</li>
+            <li>Kleppmann «Designing Data-Intensive Applications»</li>
+            <li>ByteByteGo</li>
+          </ul>
+          <p class="product-card__price">1 590 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <button class="button button--primary product-card__button" type="button" data-product="Системный дизайн: сборник архитектора">Заказать</button>
+          </div>
+        </article>
+      </div>
+      <p class="section__more"><a class="button button--secondary" href="catalog.html">Весь каталог</a></p>
+    </section>
+
+    <aside class="note">
+      <h2 class="note__title">Акция месяца</h2>
+      <p>При заказе от 3 000 ₽ — второй сборник со скидкой 20%. Условия — в разделе <a href="contacts.html">«Контакты»</a>.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <ul class="site-footer__list">
+          <li class="site-footer__item"><a class="site-footer__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-footer__item"><a class="site-footer__link" href="index.html#popular">Популярные сборники</a></li>
+          <li class="site-footer__item"><a class="site-footer__link" href="catalog.html">Каталог</a></li>
+          <li class="site-footer__item"><a class="site-footer__link" href="category.html">Engineering</a></li>
+          <li class="site-footer__item"><a class="site-footer__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__text">&copy; 2026 Исток — учебный проект. Дисциплина: «Фронтенд и бэкенд разработка».</p>
+      <p class="site-footer__text">Тел.: <a class="site-footer__link" href="tel:+74950000000">+7 (495) 000-00-00</a> · <a class="site-footer__link" href="mailto:info@istok.example">info@istok.example</a></p>
+    </div>
+  </footer>
+  <a class="to-top" href="#main" aria-label="Наверх">↑</a>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Быстрая заявка</h2>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+      <p class="order-form__selected" id="selected-product-label" hidden></p>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-topic">Тема заявки</label>
+        <select class="order-form__select" id="order-topic" name="topic" required>
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ сборника</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Получение и доставка</option>
+        </select>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-comment">Комментарий</label>
+        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="3" placeholder="Дополнительная информация"></textarea>
+      </div>
+      <div class="order-form__field order-form__field--checkbox">
+        <label class="order-form__label order-form__label--inline"><input id="order-agreement" name="agreement" type="checkbox" required> Я согласен на обработку данных</label>
+      </div>
+      <div class="order-form__actions">
+        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
+  <p class="success-message" id="success-message" role="status" hidden>Заявка успешно отправлена!</p>
+</body>
+</html>
