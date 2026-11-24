@@ -8,7 +8,10 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Исток — магазин тематических сборников источников">
   <meta property="og:description" content="Исток: кураторские сборники книг, статей и исследований по инженерным темам.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -16,8 +19,9 @@
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">Исток</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span></button>
       <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav">
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="category.html">Engineering</a></li>
@@ -40,7 +44,16 @@
           <a class="button button--light" href="category.html">Раздел Engineering</a>
         </div>
       </div>
+      <div class="hero__media">
+        <picture class="hero__picture">
+          <source type="image/avif" srcset="images/hero-600.avif 600w, images/hero-800.avif 800w, images/hero-1200.avif 1200w" sizes="(min-width: 900px) 45vw, 100vw">
+          <source type="image/webp" srcset="images/hero-600.webp 600w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" sizes="(min-width: 900px) 45vw, 100vw">
+          <img class="hero__image" src="images/hero-800.jpg" srcset="images/hero-600.jpg 600w, images/hero-800.jpg 800w, images/hero-1200.jpg 1200w" sizes="(min-width: 900px) 45vw, 100vw" width="1200" height="800" alt="Обложка магазина Исток: кураторские сборники источников по инженерным темам" fetchpriority="high">
+        </picture>
+      </div>
     </section>
+
+    <p class="js-message" aria-live="polite">Данные о сборнике загружаются…</p>
 
     <section class="section" id="advantages">
       <h2 class="section__title">Преимущества</h2>
@@ -57,7 +70,7 @@
       <div class="products-grid">
         <article class="product-card product-card--featured">
           <span class="badge badge--hit product-card__badge">Хит</span>
-          <img class="product-card__image" src="images/ai-engineering.svg" alt="Обложка сборника «AI Engineering: базовый сборник»" width="400" height="260" loading="lazy">
+          <picture class="product-card__picture"><source type="image/avif" srcset="images/ai-engineering-400.avif 400w, images/ai-engineering-800.avif 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"><source type="image/webp" srcset="images/ai-engineering-400.webp 400w, images/ai-engineering-800.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"><img class="product-card__image" src="images/ai-engineering-400.jpg" srcset="images/ai-engineering-400.jpg 400w, images/ai-engineering-800.jpg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt="Обложка сборника «AI Engineering: базовый сборник»" width="400" height="260" loading="lazy"></picture>
           <p class="product-card__category"><a class="product-card__category-link" href="category.html">Engineering → AI Engineering</a></p>
           <h3 class="product-card__title">AI Engineering: базовый сборник</h3>
           <p class="product-card__description">Введение в инженерию искусственного интеллекта: от нейросетей до этики ИИ.</p>
@@ -74,7 +87,7 @@
         </article>
         <article class="product-card">
           <span class="badge badge--new product-card__badge">Новинка</span>
-          <img class="product-card__image" src="images/web-development.svg" alt="Обложка сборника «Web Development: полный сборник»" width="400" height="260" loading="lazy">
+          <picture class="product-card__picture"><source type="image/avif" srcset="images/web-development-400.avif 400w, images/web-development-800.avif 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"><source type="image/webp" srcset="images/web-development-400.webp 400w, images/web-development-800.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"><img class="product-card__image" src="images/web-development-400.jpg" srcset="images/web-development-400.jpg 400w, images/web-development-800.jpg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt="Обложка сборника «Web Development: полный сборник»" width="400" height="260" loading="lazy"></picture>
           <p class="product-card__category">Engineering → Web Development</p>
           <h3 class="product-card__title">Web Development: полный сборник</h3>
           <p class="product-card__description">Фронтенд и бэкенд с нуля: HTML, CSS, JavaScript и практика на проектах.</p>
@@ -91,7 +104,7 @@
         </article>
         <article class="product-card product-card--discount">
           <span class="badge badge--sale product-card__badge">Скидка</span>
-          <img class="product-card__image" src="images/system-design.svg" alt="Обложка сборника «Системный дизайн: сборник архитектора»" width="400" height="260" loading="lazy">
+          <picture class="product-card__picture"><source type="image/avif" srcset="images/system-design-400.avif 400w, images/system-design-800.avif 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"><source type="image/webp" srcset="images/system-design-400.webp 400w, images/system-design-800.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"><img class="product-card__image" src="images/system-design-400.jpg" srcset="images/system-design-400.jpg 400w, images/system-design-800.jpg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt="Обложка сборника «Системный дизайн: сборник архитектора»" width="400" height="260" loading="lazy"></picture>
           <p class="product-card__category">Engineering → System Design</p>
           <h3 class="product-card__title">Системный дизайн: сборник архитектора</h3>
           <p class="product-card__description">Проектирование масштабируемых систем: от кэширования до шардирования.</p>
@@ -140,35 +153,40 @@
       <p class="order-form__selected" id="selected-product-label" hidden></p>
       <div class="order-form__field">
         <label class="order-form__label" for="order-name">Имя</label>
-        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required aria-describedby="order-name-error">
+        <small class="order-form__error" id="order-name-error" role="alert" hidden>Введите имя (не короче 2 символов).</small>
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="order-email">E-mail</label>
-        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required aria-describedby="order-email-error">
+        <small class="order-form__error" id="order-email-error" role="alert" hidden>Введите корректный e-mail.</small>
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="order-phone">Телефон</label>
-        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required aria-describedby="order-phone-hint order-phone-error">
+        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        <small class="order-form__error" id="order-phone-error" role="alert" hidden>Введите телефон в формате +7 (900) 000-00-00.</small>
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="order-topic">Тема заявки</label>
-        <select class="order-form__select" id="order-topic" name="topic" required>
+        <select class="order-form__select" id="order-topic" name="topic" required aria-describedby="order-topic-error">
           <option value="">Выберите тему</option>
           <option value="product">Заказ сборника</option>
           <option value="consultation">Консультация</option>
           <option value="delivery">Получение и доставка</option>
         </select>
+        <small class="order-form__error" id="order-topic-error" role="alert" hidden>Выберите тему заявки.</small>
       </div>
       <div class="order-form__field">
         <label class="order-form__label" for="order-comment">Комментарий</label>
         <textarea class="order-form__textarea" id="order-comment" name="comment" rows="3" placeholder="Дополнительная информация"></textarea>
       </div>
       <div class="order-form__field order-form__field--checkbox">
-        <label class="order-form__label order-form__label--inline"><input id="order-agreement" name="agreement" type="checkbox" required> Я согласен на обработку данных</label>
+        <label class="order-form__label order-form__label--inline"><input id="order-agreement" name="agreement" type="checkbox" required aria-describedby="order-agreement-error"> Я согласен на обработку данных</label>
+        <small class="order-form__error" id="order-agreement-error" role="alert" hidden>Подтвердите согласие на обработку данных.</small>
       </div>
       <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button button--secondary" type="button" id="close-order-dialog" aria-label="Закрыть окно заявки">Закрыть</button>
         <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
