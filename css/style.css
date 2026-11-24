@@ -248,6 +248,9 @@ a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visib
 .to-top:hover { background: var(--color-accent); }
 .to-top:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 
+/* ===== Учебный блок JavaScript (КР №4) ===== */
+.js-message { margin: 0 0 var(--space-xl); padding: var(--space-sm) var(--space-md); font-size: 14px; color: var(--color-muted); background: var(--color-bg-hero); border: 1px dashed var(--color-accent); border-radius: var(--radius-sm); }
+
 /* ===== Адаптивность ===== */
 /* Все адаптивные правила (Mobile First, @media min-width) вынесены в css/responsive.css,
    который подключается после этого файла на всех страницах. */

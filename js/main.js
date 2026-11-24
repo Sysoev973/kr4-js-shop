@@ -3,6 +3,57 @@
 // Сообщения об ошибках выводятся в элементы с role="alert", связанные с полями
 // через aria-describedby; состояние поля отмечается aria-invalid.
 
+// --- КР №4 (ПЗ №15): функции расчёта на данных из js/data.js ---
+// Арифметические операторы, сравнение и логика.
+
+// Форматирование цены в вид «1 490 ₽»
+const formatPrice = (price) => `${price.toLocaleString('ru-RU')} ₽`;
+
+// Размер скидки в рублях
+const calculateDiscount = (price, discountPercent) => Math.round(price * discountPercent / 100);
+
+// Итоговая цена с учётом скидки
+const calculateFinalPrice = (price, discountPercent) => price - calculateDiscount(price, discountPercent);
+
+// Статус товара: наличие и скидка
+const getProductStatus = (item) => {
+  if (!item.isAvailable) return 'Нет в наличии';
+  if (item.discountPercent > 0) return 'Скидка ' + item.discountPercent + '%';
+  return 'В наличии';
+};
+
+// Сводка по товару: объект с вычисленными полями
+const createProductSummary = (item) => ({
+  title: item.title,
+  category: item.category,
+  finalPrice: calculateFinalPrice(item.price, item.discountPercent),
+  rating: item.rating,
+  isTopRated: item.rating >= 4.5,
+  status: getProductStatus(item),
+  sourcesCount: item.sources.length
+});
+
+// Учебный вывод в консоль браузера
+console.log('Объект сборника:', product);
+console.table(product);
+console.log('Цена:', formatPrice(product.price));
+console.log('Скидка:', formatPrice(calculateDiscount(product.price, product.discountPercent)));
+console.log('Итоговая цена:', formatPrice(calculateFinalPrice(product.price, product.discountPercent)));
+console.log('Статус:', getProductStatus(product));
+console.log('Сводка:', createProductSummary(product));
+console.table(createProductSummary(product));
+
+// Учебный блок на странице: вывод ТОЛЬКО через textContent.
+// textContent вставляет данные как текст — разметка из данных не выполнится,
+// в отличие от innerHTML, через который возможна XSS-инъекция.
+const jsMessage = document.querySelector('.js-message');
+if (jsMessage) {
+  const summary = createProductSummary(product);
+  jsMessage.textContent = 'Сейчас в витрине: «' + summary.title + '» — '
+    + formatPrice(summary.finalPrice) + ' (' + getProductStatus(product).toLowerCase()
+    + ', источников: ' + summary.sourcesCount + ')';
+}
+
 // --- Бургер-меню (без JS меню остаётся открытым) ---
 const siteHeader = document.querySelector('.site-header');
 const navToggle = document.querySelector('.nav-toggle');
